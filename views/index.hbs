@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row col-6 align-middle" >
+        <form action="/getuser" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">name:</label>
+                <input type="text" class="form-control" value="Beknazar"  name="name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">lastname:</label>
+                <input type="text" class="form-control" value="Bektashov" name="lastname">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">age:</label>
+                <input type="number" class="form-control" value="17" name="age">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">group:</label>
+                <input type="text" class="form-control" value="pi-9 1-18" name="group">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">course:</label>
+                <input type="number" class="form-control" value="3" name="course">
+            </div>
+            <button href type="Submit" class="btn btn-primary btn-lg mb-3">Submit</button>
+        </form>
+            <button  id="box" type="button" class="btn btn-primary btn-lg mb-3" onclick="clicker()">Get input values in console on click</button>
+            <button  id="box2" type="button" class="btn btn-primary btn-lg  mb-3" onmouseover="overFunc()">Get input values in console on mouse over</button>
+    </div>
+</div>
+<div class="container">
+    <div class="row col-6">
+        <h1>Get Form Data</h1>
+        <div>
+            name: {{HomeName}}
+        </div>
+        <div>
+            lastname: {{HomeLastName}}
+        </div>
+        <div>
+            age: {{HomeAge}}
+        </div>
+        <div>
+            group: {{HomeGroup}}
+        </div>
+        <div>
+            course: {{HomeCourse}}
+        </div>  
+    </div>    
+</div>
+<div class="container">
+    <div class="row col-6">
+        <h1>Get Form StudData</h1>
+        <div>
+            {{HomeData}}
+        </div>   
+</div>
+<script>
+        const inputName = document.getElementsByClassName('form-control')
+    function clicker(){
+        console.log(inputName[0].value , inputName[1].value , inputName[2].value )
+    };
+    function overFunc(){
+        console.log(inputName[0].value , inputName[1].value , inputName[2].value )
+    };
+</script>
