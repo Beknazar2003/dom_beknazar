@@ -47,9 +47,12 @@
     </div>
     <div class="card">
         <h1>Get Form StudData</h1>
-        <div>
-            {{HomeData}}
-        </div>   
+        <ul>
+           {{#each HomeData}}  
+                <li>{{this.name}}</li>
+            {{/each}} 
+        </ul>
+        
     </div>
     </div>
 </div>

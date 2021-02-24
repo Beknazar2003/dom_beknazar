@@ -2,20 +2,20 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-let formData = {}
+let formObj = []
 
 router.post('/getuser' , async (req , res) => {
-    formData = {
-      name:     req.body.name,
+  formObj[formObj.length] = {
+    name:     req.body.name,
       lastname: req.body.lastname,
       age:      req.body.age,
       group:      req.body.group,
       course:      req.body.course
   }
 
-  fs.appendFileSync("studdata.txt", JSON.stringify(formData) + `\n\n` )
+  fs.writeFileSync("studdata.txt", JSON.stringify(formObj))
 
-  console.log(formData)
+  console.log(formObj)
     res.redirect('/');
   })
 
@@ -23,16 +23,16 @@ router.post('/getuser' , async (req , res) => {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  const data = fs.readFileSync("studdata.txt", "utf-8")
+  const data = JSON.parse(fs.readFileSync("studdata.txt", "utf-8")) 
 
   res.render('index', { 
     title: 'Home',
-    HomeName: formData.name,
-    HomeLastName: formData.lastname,
-    HomeAge: formData.age,
-    HomeGroup: formData.group,
-    HomeCourse: formData.course,
-    HomeData: data + `\n\n`
+    HomeName: data[data.length],
+    HomeLastName: data[data.length],
+    HomeAge: data[data.length],
+    HomeGroup: data[data.length],
+    HomeCourse: data[data.length],
+    HomeData: data
   });
 });
 

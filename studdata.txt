@@ -1,4 +1,1 @@
-{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"}
-
-{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"}
-
+[{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"},{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"},{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"},{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"}]
