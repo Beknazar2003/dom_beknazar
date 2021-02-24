@@ -13,7 +13,7 @@ router.post('/getuser' , async (req , res) => {
       course:      req.body.course
   }
 
-  fs.appendFileSync("studdata.txt", JSON.stringify(formData) )
+  fs.appendFileSync("studdata.txt", JSON.stringify(formData) + `\n\n` )
 
   console.log(formData)
     res.redirect('/');
@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
     HomeAge: formData.age,
     HomeGroup: formData.group,
     HomeCourse: formData.course,
-    HomeData: data
+    HomeData: data + `\n\n`
   });
 });
 

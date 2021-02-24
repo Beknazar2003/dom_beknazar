@@ -26,9 +26,8 @@
             <button  id="box" type="button" class="btn btn-primary btn-lg mb-3" onclick="clicker()">Get input values in console on click</button>
             <button  id="box2" type="button" class="btn btn-primary btn-lg  mb-3" onmouseover="overFunc()">Get input values in console on mouse over</button>
     </div>
-</div>
-<div class="container">
     <div class="row col-6">
+        <div class="card">
         <h1>Get Form Data</h1>
         <div>
             name: {{HomeName}}
@@ -45,21 +44,23 @@
         <div>
             course: {{HomeCourse}}
         </div>  
-    </div>    
-</div>
-<div class="container">
-    <div class="row col-6">
+    </div>
+    <div class="card">
         <h1>Get Form StudData</h1>
         <div>
             {{HomeData}}
         </div>   
+    </div>
+    </div>
 </div>
+    
+    
 <script>
         const inputName = document.getElementsByClassName('form-control')
     function clicker(){
-        console.log(inputName[0].value , inputName[1].value , inputName[2].value )
+        console.log(inputName[0].value , inputName[1].value , inputName[2].value + ' on click' )
     };
     function overFunc(){
-        console.log(inputName[0].value , inputName[1].value , inputName[2].value )
+        console.log(inputName[0].value , inputName[1].value , inputName[2].value + ' on mouse over')
     };
 </script>
