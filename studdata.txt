@@ -1,0 +1,1 @@
+[{"name":"Iskender","lastname":"Jumagulov","age":"17","group":"ib-9 1-20","course":"1"},{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"},{"name":"Beknazar","lastname":"Bektashov","age":"17","group":"pi-9 1-18","course":"3"}]
