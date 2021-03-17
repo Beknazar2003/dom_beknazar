@@ -2,7 +2,18 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
+const {Pool, Client} = require('pg')
+
+const pool = new Pool({
+  database: 'universitet',
+  user: 'postgres',
+  password: 'postgres',
+  port: 5432,
+  host: 'localhost'
+})
+
 let formObj = []
+let insertObj = {}
 
 router.post('/getuser' , async (req , res) => {
   formObj[formObj.length] = {
@@ -19,6 +30,28 @@ router.post('/getuser' , async (req , res) => {
     res.redirect('/');
   })
 
+  router.post('/createuser' , async (req , res) => {
+    insertObj = {
+        fam:  req.body.fam,
+        name: req.body.name,
+        surname: req.body.surname,
+        post: req.body.post
+    }
+  
+    pool.query(`INSERT INTO teacher(fam, name, surname, post) VALUES ( '${insertObj.fam}', '${insertObj.name}', '${insertObj.surname}', '${insertObj.post}' )`), (err, res) => {
+      console.log(err, res)
+      pool.end()
+    }
+  
+    console.log(insertObj)
+      res.redirect('/createpage');
+    })
+    router.get('/createpage', function(req, res, next) {
+
+      res.render('createpage', { 
+        title: 'CreateUser'
+      });
+    });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
