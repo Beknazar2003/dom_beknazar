@@ -49,7 +49,8 @@ router.post('/getuser' , async (req , res) => {
     router.get('/createpage', function(req, res, next) {
 
       res.render('createpage', { 
-        title: 'CreateUser'
+        title: 'CreateUser',
+        isCreate: true
       });
     });
 
@@ -65,7 +66,9 @@ router.get('/', function(req, res, next) {
     HomeAge: data[data.length - 1]['age'],
     HomeGroup: data[data.length - 1]['group'],
     HomeCourse: data[data.length - 1]['course'],
-    HomeData: data
+    HomeData: data,
+    isHome: true
+
   });
 });
 
